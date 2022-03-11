@@ -47,23 +47,22 @@ export const MealsData = () => {
             <div className="container">
                 <h1></h1>
                 <select className="form-select form-select-lg mb-3" onChange={changeFoodType}>
-                    <option selected disabled>Select</option>
-                    <option value={``} style={{ fontSize: 25 }} disabled >Different Food Items :</option>
+                    <option value={``} className='commom_font' disabled >Prepare Food Procedure:</option>
+                    <option value={`check`}>Check How to Prepare Food Items</option>
+                    <option className='commom_font' value={``} disabled >Different Food Items :</option>
                     <option value={`a,Canadian`}>Canadian Food</option>
                     <option value={`c,Seafood`} >Seafood Items</option>
                     <option value={`i,chicken_breast`}>Chicken Breast Items</option>
                     <option value={`i,garlic`} >Garlic Food Items</option>
                     <option value={`i,salt`}>Salt Food Items</option>
-                    <option value={``} style={{ fontSize: 25 }} disabled >Prepare Food Procedure:</option>
-                    <option value={`check`}>Check How to Prepare Food Items</option>
                 </select>
                 <div>
                     {mealsData.length !== 0 && checkItems.length === 0 && foodType === undefined && (
                         mealsData.map((food, index) => {
-                            return <div key={index} style={{ marginTop: 10 }}>
+                            return <div key={index} className='common_margin'>
                                 <h1>Make a {food.Vegetarian} {food.strTags} in {food.strArea} style</h1>
                                 <div className="row">
-                                    <div className="col-5" style={{ lineHeight: 2 }}>
+                                    <div className="col-5 commin_line_height" >
                                         <h4>Ingredients</h4>
                                         <ul>
                                             <li>{food.strMeasure1} - {food.strIngredient1}</li>
@@ -77,7 +76,7 @@ export const MealsData = () => {
                                         </ul>
                                     </div>
                                     <div className="col-7">
-                                        <div style={{ height: 200, width: '500px' }}>
+                                        <div className="procedure_img">
                                             <img src={food.strMealThumb} className='procedure' />
                                         </div>
                                     </div>
@@ -98,10 +97,10 @@ export const MealsData = () => {
                     <hr />
                     {seaFood.length !== 0 && checkItems.length === 0 && foodType === undefined && (
                         seaFood.map((food, index) => {
-                            return <div key={index} style={{ marginTop: 10 }}>
+                            return <div key={index} className='common_margin'>
                                 <h1>Make a {food.Vegetarian} {food.strTags} in {food.strArea} style</h1>
                                 <div className="row">
-                                    <div className="col-5" style={{ lineHeight: 2 }}>
+                                    <div className="col-5 commin_line_height" >
                                         <h4>Ingredients</h4>
                                         <ul>
                                             <li>{food.strMeasure1} - {food.strIngredient1}</li>
@@ -121,7 +120,7 @@ export const MealsData = () => {
                                         </ul>
                                     </div>
                                     <div className="col-7">
-                                        <div style={{ height: 200, width: '500px' }}>
+                                        <div className='procedure_img'>
                                             <img src={food.strMealThumb} className='procedure' />
                                         </div>
                                     </div>
@@ -139,7 +138,7 @@ export const MealsData = () => {
                         })
                     )}
 
-                    <div className="row" style={{ marginTop: 20, marginBottom: 20, background: '' }}>
+                    <div className="row food_items_name"  >
                         <h1>
                             {foodType == 'Canadian' && "Canadian Food Items"}
                             {foodType == 'chicken_breast' && "Chicken Items"}
@@ -151,11 +150,11 @@ export const MealsData = () => {
 
                         {checkItems.length !== 0 && foodType !== undefined && (
                             checkItems.map((checken, index) => {
-                                return <div className="col-xs-12 col-sm-6 col-md-4" key={index} style={{ background: '', textAlign: "" }} >
+                                return <div className="col-xs-12 col-sm-6 col-md-4" key={index} >
                                     <div>
                                         <img src={checken.strMealThumb} className='check_items' />
                                     </div>
-                                    <p style={{ fontSize: 20 }}>{checken.strMeal}</p>
+                                    <p className='commom_font'>{checken.strMeal}</p>
                                 </div>
 
                             })

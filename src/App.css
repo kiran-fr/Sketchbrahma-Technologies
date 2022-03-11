@@ -81,7 +81,25 @@ li {
 img {
   border-radius: 20px !important;
 }
-.check_items{
+.check_items {
   height: 100%;
   max-width: 300px;
+}
+.procedure_img {
+  height: 200px;
+  width: 500px;
+}
+.food_items_name {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.common_margin{
+margin-top: 10px;
+}
+.commom_font{
+  font-size: 20px;
+}
+.commin_line_height{
+  line-height: 37px;
 }
